@@ -22,22 +22,6 @@
           </ul>
         </div>
 
-        <!-- Stats row — sits between the two education cards -->
-        <div class="about__stats">
-          <div class="about__stat-tile" v-reveal>
-            <span class="about__stat-number">3.29</span>
-            <span class="about__stat-label">GPA</span>
-          </div>
-          <div class="about__stat-tile" v-reveal="{ delay: 100 }">
-            <span class="about__stat-number">2×</span>
-            <span class="about__stat-label">P2MW Funded</span>
-          </div>
-          <div class="about__stat-tile" v-reveal="{ delay: 200 }">
-            <span class="about__stat-number">4+</span>
-            <span class="about__stat-label">Finalist National Competitions</span>
-          </div>
-        </div>
-
         <!-- SMAN 1 Kampar Timur card -->
         <div class="about__edu-card" v-reveal="{ delay: 120 }">
           <p class="about__school">{{ education[1].school }}</p>
@@ -125,8 +109,8 @@ import { vReveal } from '@/composables/useScrollReveal.js'
 }
 
 html.dark .about__edu-card:first-child::before {
-  filter: grayscale(100%) invert(1);
-  opacity: 0.07;
+  filter: grayscale(100%) brightness(8);
+  opacity: 0.22;
 }
 
 .about__school {
@@ -203,39 +187,6 @@ html.dark .about__edu-card:first-child::before {
   flex-shrink: 0;
 }
 
-/* Stats row — always horizontal, three equal tiles */
-.about__stats {
-  display: flex;
-  flex-direction: row;
-  gap: var(--space-2);
-}
-
-.about__stat-tile {
-  flex: 1;
-  background-color: var(--color-white);
-  border-radius: var(--radius-btn);
-  padding: 24px 32px;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.about__stat-number {
-  font-family: var(--font-primary);
-  font-size: 36px;
-  font-weight: 500;
-  color: var(--color-ink);
-  letter-spacing: -0.02em;
-}
-
-.about__stat-label {
-  font-family: var(--font-primary);
-  font-size: 14px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  color: var(--color-slate);
-}
 
 @media (max-width: 767px) {
   .about {
@@ -255,18 +206,5 @@ html.dark .about__edu-card:first-child::before {
     padding: 24px;
   }
 
-  .about__stat-tile {
-    padding: 16px 12px;
-    align-items: center;
-  }
-
-  .about__stat-number {
-    font-size: 28px;
-  }
-
-  .about__stat-label {
-    font-size: 11px;
-    text-align: center;
-  }
 }
 </style>

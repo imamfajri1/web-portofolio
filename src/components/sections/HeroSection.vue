@@ -32,6 +32,18 @@
         <div class="hero__cta-row">
           <PrimaryButton label="View My Work" scroll="projects" />
           <SecondaryButton label="Contact Me" scroll="contact" />
+          <a
+            href="/Imam Fajri - resume.pdf"
+            download
+            class="hero__download"
+            aria-label="Download resume PDF"
+          >
+            <svg class="hero__download-icon" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M7 1v8M3.5 6l3.5 3.5L10.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M1 11.5h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            Resume
+          </a>
         </div>
       </div>
 
@@ -353,6 +365,32 @@ function scrollToProjects() {
 
 .hero__arc {
   display: block;
+}
+
+.hero__download {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  font-family: var(--font-primary);
+  font-size: 16px;
+  font-weight: 500;
+  color: #ffffff;
+  background-color: #e03c31;
+  border-radius: var(--radius-btn);
+  text-decoration: none;
+  padding: 6px 24px;
+  min-height: 44px;
+  white-space: nowrap;
+  transition: background-color 0.2s ease;
+}
+
+.hero__download:hover {
+  background-color: #b52e24;
+}
+
+.hero__download-icon {
+  flex-shrink: 0;
 }
 
 @media (max-width: 767px) {

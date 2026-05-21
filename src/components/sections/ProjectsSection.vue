@@ -15,7 +15,10 @@
 
     <div class="projects__container">
       <EyebrowLabel label="PROJECTS" />
-      <h2 class="projects__heading">Selected Projects</h2>
+      <h2 class="projects__heading">My Projects</h2>
+
+      <!-- GitHub contribution graph -->
+      <GitHubGraph v-reveal />
 
       <div class="projects__grid">
         <div
@@ -70,6 +73,7 @@
 <script setup>
 import { projects } from '@/data/resume.js'
 import EyebrowLabel from '@/components/ui/EyebrowLabel.vue'
+import GitHubGraph from '@/components/ui/GitHubGraph.vue'
 import { vReveal } from '@/composables/useScrollReveal.js'
 </script>
 
