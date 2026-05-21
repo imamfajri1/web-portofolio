@@ -357,11 +357,12 @@ function scrollToProjects() {
 
 @media (max-width: 767px) {
   .hero__silhouette {
-    width: 280px;
-    height: 280px;
-    right: 50%;
-    top: 120px;
-    transform: translateX(50%);
+    width: 240px;
+    height: 240px;
+    right: -40px;
+    bottom: var(--space-6);
+    top: auto;
+    transform: none;
     opacity: 0.045;
   }
 

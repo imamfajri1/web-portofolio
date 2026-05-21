@@ -4,32 +4,25 @@
       <EyebrowLabel label="ABOUT" />
       <h2 class="about__heading">Education &amp; Background</h2>
 
-      <div class="about__grid">
-        <!-- Education cards column — one card per entry -->
-        <div class="about__edu-column">
-          <div
-            v-for="(edu, idx) in education"
-            :key="edu.school"
-            class="about__edu-card"
-            v-reveal="idx === 0 ? {} : { delay: 120 }"
-          >
-            <p class="about__school">{{ edu.school }}</p>
-            <p class="about__location">{{ edu.location }}</p>
-            <p class="about__degree">{{ edu.degree }}</p>
-            <div class="about__meta-row">
-              <span v-if="edu.gpa" class="about__gpa-badge">GPA {{ edu.gpa }}</span>
-              <span class="about__period">{{ edu.period }}</span>
-            </div>
-            <ul class="about__highlights">
-              <li v-for="h in edu.highlights" :key="h" class="about__highlight-item">
-                <span class="about__dot" aria-hidden="true">·</span>
-                {{ h }}
-              </li>
-            </ul>
+      <div class="about__edu-column">
+        <!-- Universitas Indonesia card -->
+        <div class="about__edu-card" v-reveal>
+          <p class="about__school">{{ education[0].school }}</p>
+          <p class="about__location">{{ education[0].location }}</p>
+          <p class="about__degree">{{ education[0].degree }}</p>
+          <div class="about__meta-row">
+            <span class="about__gpa-badge">GPA {{ education[0].gpa }}</span>
+            <span class="about__period">{{ education[0].period }}</span>
           </div>
+          <ul class="about__highlights">
+            <li v-for="h in education[0].highlights" :key="h" class="about__highlight-item">
+              <span class="about__dot" aria-hidden="true">·</span>
+              {{ h }}
+            </li>
+          </ul>
         </div>
 
-        <!-- Stats column -->
+        <!-- Stats row — sits between the two education cards -->
         <div class="about__stats">
           <div class="about__stat-tile" v-reveal>
             <span class="about__stat-number">3.29</span>
@@ -43,6 +36,22 @@
             <span class="about__stat-number">4+</span>
             <span class="about__stat-label">Finalist National Competitions</span>
           </div>
+        </div>
+
+        <!-- SMAN 1 Kampar Timur card -->
+        <div class="about__edu-card" v-reveal="{ delay: 120 }">
+          <p class="about__school">{{ education[1].school }}</p>
+          <p class="about__location">{{ education[1].location }}</p>
+          <p class="about__degree">{{ education[1].degree }}</p>
+          <div class="about__meta-row">
+            <span class="about__period">{{ education[1].period }}</span>
+          </div>
+          <ul class="about__highlights">
+            <li v-for="h in education[1].highlights" :key="h" class="about__highlight-item">
+              <span class="about__dot" aria-hidden="true">·</span>
+              {{ h }}
+            </li>
+          </ul>
         </div>
       </div>
     </div>
@@ -78,14 +87,7 @@ import { vReveal } from '@/composables/useScrollReveal.js'
   color: var(--color-ink);
 }
 
-.about__grid {
-  display: grid;
-  grid-template-columns: 55% 45%;
-  gap: var(--space-6);
-  align-items: start;
-}
-
-/* Education cards column */
+/* Single-column flow: UI card → stats row → SMAN card */
 .about__edu-column {
   display: flex;
   flex-direction: column;
@@ -201,14 +203,15 @@ html.dark .about__edu-card:first-child::before {
   flex-shrink: 0;
 }
 
-/* Stats */
+/* Stats row — always horizontal, three equal tiles */
 .about__stats {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: var(--space-2);
 }
 
 .about__stat-tile {
+  flex: 1;
   background-color: var(--color-white);
   border-radius: var(--radius-btn);
   padding: 24px 32px;
@@ -244,11 +247,6 @@ html.dark .about__edu-card:first-child::before {
     gap: var(--space-3);
   }
 
-  .about__grid {
-    grid-template-columns: 1fr;
-    gap: var(--space-3);
-  }
-
   .about__edu-column {
     gap: var(--space-2);
   }
@@ -257,13 +255,7 @@ html.dark .about__edu-card:first-child::before {
     padding: 24px;
   }
 
-  .about__stats {
-    flex-direction: row;
-    gap: var(--space-2);
-  }
-
   .about__stat-tile {
-    flex: 1;
     padding: 16px 12px;
     align-items: center;
   }
