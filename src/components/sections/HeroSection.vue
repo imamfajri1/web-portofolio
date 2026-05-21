@@ -330,7 +330,7 @@ function scrollToProjects() {
 
 @media (max-width: 767px) {
   .hero {
-    padding: var(--space-8) 0 var(--space-6);
+    padding: 100px 0 var(--space-6);
     cursor: auto;
   }
 
