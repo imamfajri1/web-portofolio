@@ -2,7 +2,15 @@
   <nav class="navbar" :class="{ 'navbar--scrolled': isScrolled }">
     <div class="navbar__inner">
       <!-- Logo -->
-      <span class="navbar__logo">IF</span>
+      <span class="navbar__logo" aria-label="Home">
+        <svg class="navbar__logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="47" fill="#CC0000" stroke="#0D0D0D" stroke-width="6"/>
+          <path
+            d="M50,50 C52,44 58,42 62,46 C67,51 65,59 59,63 C52,68 42,66 38,59 C33,51 36,40 44,35 C53,29 65,33 70,43 C76,55 72,70 61,76 C48,83 31,79 24,66 C16,51 21,32 36,24 C52,15 72,22 79,40"
+            fill="none" stroke="#0D0D0D" stroke-width="7" stroke-linecap="round"
+          />
+        </svg>
+      </span>
 
       <!-- Desktop links -->
       <ul class="navbar__links" role="list">
@@ -141,12 +149,15 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
 }
 
 .navbar__logo {
-  font-family: var(--font-primary);
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--color-ink);
-  letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
   flex-shrink: 0;
+}
+
+.navbar__logo-svg {
+  width: 36px;
+  height: 36px;
+  display: block;
 }
 
 .navbar__links {
@@ -284,6 +295,10 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
 }
 
 @media (max-width: 767px) {
+  .navbar {
+    width: calc(100% - 32px);
+  }
+
   .navbar__links,
   .navbar__scroll-cta {
     display: none;
@@ -294,8 +309,17 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
   }
 
   .navbar__inner {
-    padding: 12px 24px;
+    padding: 10px 20px;
     gap: var(--space-1);
+  }
+
+  .navbar__theme-toggle {
+    margin-left: auto;
+  }
+
+  .navbar__logo-svg {
+    width: 32px;
+    height: 32px;
   }
 }
 </style>
