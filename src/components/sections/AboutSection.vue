@@ -5,13 +5,19 @@
       <h2 class="about__heading">Education &amp; Background</h2>
 
       <div class="about__grid">
-        <!-- Education card -->
-        <div class="about__edu-card" v-reveal>
-          <div v-for="edu in education" :key="edu.school">
+        <!-- Education cards column — one card per entry -->
+        <div class="about__edu-column">
+          <div
+            v-for="(edu, idx) in education"
+            :key="edu.school"
+            class="about__edu-card"
+            v-reveal="idx === 0 ? {} : { delay: 120 }"
+          >
             <p class="about__school">{{ edu.school }}</p>
+            <p class="about__location">{{ edu.location }}</p>
             <p class="about__degree">{{ edu.degree }}</p>
             <div class="about__meta-row">
-              <span class="about__gpa-badge">GPA {{ edu.gpa }}</span>
+              <span v-if="edu.gpa" class="about__gpa-badge">GPA {{ edu.gpa }}</span>
               <span class="about__period">{{ edu.period }}</span>
             </div>
             <ul class="about__highlights">
@@ -35,7 +41,7 @@
           </div>
           <div class="about__stat-tile" v-reveal="{ delay: 200 }">
             <span class="about__stat-number">4+</span>
-            <span class="about__stat-label">Hackathon Finalist</span>
+            <span class="about__stat-label">Finalist National Competitions</span>
           </div>
         </div>
       </div>
@@ -79,15 +85,46 @@ import { vReveal } from '@/composables/useScrollReveal.js'
   align-items: start;
 }
 
+/* Education cards column */
+.about__edu-column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
 /* Education card */
 .about__edu-card {
+  position: relative;
+  overflow: hidden;
   background-color: var(--color-canvas);
   border-radius: var(--radius-hero);
   padding: 40px;
   box-shadow: var(--shadow-card);
   display: flex;
   flex-direction: column;
-  gap: var(--space-3);
+  gap: var(--space-2);
+}
+
+/* UI logo silhouette — only on the first (Universitas Indonesia) card */
+.about__edu-card:first-child::before {
+  content: '';
+  position: absolute;
+  right: -24px;
+  bottom: -24px;
+  width: 220px;
+  height: 220px;
+  background-image: url('/organization/Universitas Indonesia Logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.3;
+  filter: grayscale(100%);
+  pointer-events: none;
+}
+
+html.dark .about__edu-card:first-child::before {
+  filter: grayscale(100%) invert(1);
+  opacity: 0.07;
 }
 
 .about__school {
@@ -95,6 +132,16 @@ import { vReveal } from '@/composables/useScrollReveal.js'
   font-size: 24px;
   font-weight: 500;
   color: var(--color-ink);
+}
+
+.about__location {
+  font-family: var(--font-primary);
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-slate);
+  margin-top: -4px;
 }
 
 .about__degree {
@@ -200,6 +247,10 @@ import { vReveal } from '@/composables/useScrollReveal.js'
   .about__grid {
     grid-template-columns: 1fr;
     gap: var(--space-3);
+  }
+
+  .about__edu-column {
+    gap: var(--space-2);
   }
 
   .about__edu-card {

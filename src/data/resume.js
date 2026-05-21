@@ -19,6 +19,22 @@ export const education = [
       'Twice-recipient of P2MW (Student Entrepreneurship Development Program) funding; KMI Expo finalist 2024 & 2025',
       'Finalist, Hackathon UI 2025 (Funding Entrepreneurship track) and Satria Data 2024 (Infographic)'
     ]
+  },
+  {
+    school: 'SMAN 1 Kampar Timur',
+    location: 'Kampar, Riau',
+    degree: 'Natural Sciences (IPA)',
+    gpa: null,
+    period: 'Jul 2020 – May 2023',
+    highlights: [
+      'Chairman, Student Council (OSIS) SMAN 1 Kampar Timur — led all student government programs, school events, and cross-division coordination across the student body.',
+      'Chairman, Pramuka SMAN 1 Kampar Timur — directed scouting operations, character-building activities, and inter-unit competitions for the school\'s scout unit.',
+      'Chairman, Forum GenRe Kabupaten Kampar Generation 4 — led the district-level youth forum dedicated to adolescent health, academic achievement, and moral development across Kampar Regency.',
+      'Duta GenRe Putra 1 Kabupaten Kampar (1st Place) — selected as Kampar district\'s top youth ambassador under the national GenRe program; championed healthy lifestyles, educational ambition, and moral integrity among teenagers, and served as a public role model inspiring meaningful and purposeful living.',
+      '2nd Place, KSN-K Informatics — ranked second in the district-level National Science Olympiad (Kompetisi Sains Nasional Kabupaten) in the field of informatics.',
+      'Pramuka Garuda Penegak, Kabupaten Kampar — attained Garuda Penegak, the highest scouting distinction at the Penegak (senior scout) level, awarded at the district level.',
+      'Duta Bahasa Riau Finalist (youngest finalist) — competed in the provincial Language Ambassador program representing Riau; the youngest participant to reach the finalist stage, with a focus on advancing Indonesian language proficiency and fostering a culture of linguistic excellence.'
+    ]
   }
 ]
 
@@ -77,7 +93,7 @@ export const experience = [
     ]
   },
   {
-    title: 'Assistant Lecturer',
+    title: 'Teaching Assistant for Integrated Personality Development Skills',
     company: 'Faculty of Computer Science, Universitas Indonesia',
     location: 'Depok, West Java',
     period: 'Jan 2025 – Jun 2025',

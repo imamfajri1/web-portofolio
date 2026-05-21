@@ -5,7 +5,13 @@ const routes = [
   {
     path: '/',
     name: 'home',
+    alias: ['/home'],
     component: HomeView
+  },
+  // Redirect any unmatched path back to home
+  {
+    path: '/:pathMatch(.*)*',
+    redirect: '/'
   }
 ]
 

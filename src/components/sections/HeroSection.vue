@@ -8,6 +8,20 @@
     <!-- Particle canvas background -->
     <canvas ref="canvasRef" class="hero__canvas" aria-hidden="true"></canvas>
 
+    <!-- Decorative Uzumaki silhouette — ghost watermark behind content -->
+    <svg
+      class="hero__silhouette"
+      viewBox="0 0 100 100"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <circle cx="50" cy="50" r="47" fill="none" stroke="currentColor" stroke-width="5.5"/>
+      <path
+        d="M50,50 C52,44 58,42 62,46 C67,51 65,59 59,63 C52,68 42,66 38,59 C33,51 36,40 44,35 C53,29 65,33 70,43 C76,55 72,70 61,76 C48,83 31,79 24,66 C16,51 21,32 36,24 C52,15 72,22 79,40"
+        fill="none" stroke="currentColor" stroke-width="6.5" stroke-linecap="round"
+      />
+    </svg>
+
     <div class="hero__container" :style="tiltStyle">
       <!-- Left column -->
       <div class="hero__left">
@@ -220,6 +234,19 @@ function scrollToProjects() {
   pointer-events: none;
 }
 
+.hero__silhouette {
+  position: absolute;
+  right: 6%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 560px;
+  height: 560px;
+  z-index: 1;
+  pointer-events: none;
+  color: var(--color-ink);
+  opacity: 0.055;
+}
+
 .hero__container {
   position: relative;
   z-index: 2;
@@ -329,6 +356,15 @@ function scrollToProjects() {
 }
 
 @media (max-width: 767px) {
+  .hero__silhouette {
+    width: 280px;
+    height: 280px;
+    right: 50%;
+    top: 120px;
+    transform: translateX(50%);
+    opacity: 0.045;
+  }
+
   .hero {
     padding: 100px 0 var(--space-6);
     cursor: auto;
