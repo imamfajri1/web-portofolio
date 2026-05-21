@@ -1,0 +1,62 @@
+:root {
+  /* Colors */
+  --color-canvas: #F3F0EE;
+  --color-canvas-lifted: #FCFBFA;
+  --color-ink: #141413;
+  --color-white: #FFFFFF;
+  --color-slate: #696969;
+  --color-orange-signal: #CF4500;
+  --color-orange-arc: #F37338;
+  --color-bone: #F4F4F4;
+  --color-watermark: #E8E2DA;
+  --color-border: #D1CDC7;
+  --color-nav-scrolled-bg: rgba(255, 255, 255, 0.85);
+  --color-footer-bg: #141413;
+
+  /* Typography */
+  --font-primary: 'Sofia Sans', Arial, sans-serif;
+
+  /* Border Radius */
+  --radius-btn: 20px;
+  --radius-hero: 40px;
+  --radius-pill: 999px;
+  --radius-circle: 50%;
+
+  /* Shadows */
+  --shadow-nav: rgba(0,0,0,0.04) 0px 4px 24px 0px;
+  --shadow-card: rgba(0,0,0,0.08) 0px 24px 48px 0px;
+
+  /* Spacing (8px base) */
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-6: 48px;
+  --space-8: 64px;
+  --space-12: 96px;
+  --space-16: 128px;
+}
+
+html.dark {
+  --color-canvas:          #1A1918;
+  --color-canvas-lifted:   #201F1E;
+  --color-ink:             #F3F0EE;
+  --color-white:           #252422;
+  --color-slate:           #8A8682;
+  --color-bone:            #2E2C2A;
+  --color-watermark:       #2A2826;
+  --color-border:          #3A3835;
+  --color-nav-scrolled-bg: rgba(37, 36, 34, 0.85);
+  --shadow-nav:            rgba(0,0,0,0.30) 0px 4px 24px 0px;
+  --shadow-card:           rgba(0,0,0,0.45) 0px 24px 48px 0px;
+  color-scheme: dark;
+}
+
+/* Smooth color-mode transitions site-wide */
+*, *::before, *::after {
+  transition:
+    background-color 250ms ease,
+    border-color 250ms ease,
+    color 250ms ease,
+    box-shadow 250ms ease;
+}
