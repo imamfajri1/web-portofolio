@@ -2,22 +2,36 @@
   <section id="experience" class="experience">
     <div class="experience__container">
       <EyebrowLabel label="EXPERIENCE" />
-      <h2 class="experience__heading">Work Experience</h2>
 
-      <div class="experience__timeline">
-        <!-- Vertical line -->
+      <!-- Heading + tabs in one row -->
+      <div class="experience__top">
+        <h2 class="experience__heading">Experience</h2>
+        <div class="experience__tabs" role="tablist">
+          <button
+            role="tab"
+            :aria-selected="activeTab === 'work'"
+            :class="['experience__tab', { 'experience__tab--active': activeTab === 'work' }]"
+            @click="activeTab = 'work'"
+          >Work</button>
+          <button
+            role="tab"
+            :aria-selected="activeTab === 'org'"
+            :class="['experience__tab', { 'experience__tab--active': activeTab === 'org' }]"
+            @click="activeTab = 'org'"
+          >Organizations</button>
+        </div>
+      </div>
+
+      <!-- Work timeline -->
+      <div v-if="activeTab === 'work'" class="experience__timeline">
         <div class="experience__line" aria-hidden="true"></div>
-
         <div
           v-for="(job, index) in experience"
           :key="index"
           class="experience__entry"
           v-reveal="{ delay: index * 80 }"
         >
-          <!-- Timeline dot -->
           <div class="experience__dot" aria-hidden="true"></div>
-
-          <!-- Card -->
           <div class="experience__card">
             <div class="experience__card-header">
               <span class="experience__period-pill">{{ job.period }}</span>
@@ -33,14 +47,44 @@
           </div>
         </div>
       </div>
+
+      <!-- Organizations timeline -->
+      <div v-else class="experience__timeline">
+        <div class="experience__line" aria-hidden="true"></div>
+        <div
+          v-for="(org, index) in organizations"
+          :key="index"
+          class="experience__entry"
+          v-reveal="{ delay: index * 80 }"
+        >
+          <div class="experience__dot experience__dot--org" aria-hidden="true"></div>
+          <div class="experience__card">
+            <div class="experience__card-header">
+              <span class="experience__period-pill">{{ org.period }}</span>
+            </div>
+            <h3 class="experience__title">{{ org.title }}</h3>
+            <p class="experience__meta">{{ org.company }} · {{ org.location }}</p>
+            <ul class="experience__points">
+              <li v-for="point in org.points" :key="point" class="experience__point">
+                <span class="experience__bullet" aria-hidden="true">·</span>
+                {{ point }}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 </template>
 
 <script setup>
-import { experience } from '@/data/resume.js'
+import { ref } from 'vue'
+import { experience, organizations } from '@/data/resume.js'
 import EyebrowLabel from '@/components/ui/EyebrowLabel.vue'
 import { vReveal } from '@/composables/useScrollReveal.js'
+
+const activeTab = ref('work')
 </script>
 
 <style scoped>
@@ -58,6 +102,15 @@ import { vReveal } from '@/composables/useScrollReveal.js'
   gap: var(--space-4);
 }
 
+/* Heading + tabs row */
+.experience__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
 .experience__heading {
   font-family: var(--font-primary);
   font-size: 36px;
@@ -66,6 +119,39 @@ import { vReveal } from '@/composables/useScrollReveal.js'
   color: var(--color-ink);
 }
 
+/* Tabs */
+.experience__tabs {
+  display: flex;
+  gap: 8px;
+}
+
+.experience__tab {
+  font-family: var(--font-primary);
+  font-size: 14px;
+  font-weight: 500;
+  padding: 7px 20px;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--color-border);
+  background: transparent;
+  color: var(--color-slate);
+  cursor: pointer;
+  min-height: 36px;
+  white-space: nowrap;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.experience__tab--active {
+  background-color: var(--color-ink);
+  border-color: var(--color-ink);
+  color: var(--color-canvas);
+}
+
+.experience__tab:not(.experience__tab--active):hover {
+  border-color: var(--color-ink);
+  color: var(--color-ink);
+}
+
+/* Timeline */
 .experience__timeline {
   position: relative;
   padding-left: 56px;
@@ -99,6 +185,11 @@ import { vReveal } from '@/composables/useScrollReveal.js'
   border-radius: var(--radius-circle);
   background-color: var(--color-ink);
   flex-shrink: 0;
+}
+
+/* Orange dot for organizations */
+.experience__dot--org {
+  background-color: var(--color-orange-arc);
 }
 
 .experience__card {
@@ -178,6 +269,12 @@ import { vReveal } from '@/composables/useScrollReveal.js'
     gap: var(--space-3);
   }
 
+  .experience__top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-2);
+  }
+
   .experience__heading {
     font-size: 28px;
   }
@@ -187,10 +284,7 @@ import { vReveal } from '@/composables/useScrollReveal.js'
     gap: var(--space-2);
   }
 
-  .experience__line {
-    display: none;
-  }
-
+  .experience__line,
   .experience__dot {
     display: none;
   }

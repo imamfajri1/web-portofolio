@@ -27,13 +27,13 @@ export const education = [
     gpa: null,
     period: 'Jul 2020 – May 2023',
     highlights: [
-      'Chairman, Student Council (OSIS) SMAN 1 Kampar Timur — led all student government programs, school events, and cross-division coordination across the student body.',
-      'Chairman, Pramuka SMAN 1 Kampar Timur — directed scouting operations, character-building activities, and inter-unit competitions for the school\'s scout unit.',
-      'Chairman, Forum GenRe Kabupaten Kampar Generation 4 — led the district-level youth forum dedicated to adolescent health, academic achievement, and moral development across Kampar Regency.',
-      'Duta GenRe Putra 1 Kabupaten Kampar (1st Place) — selected as Kampar district\'s top youth ambassador under the national GenRe program; championed healthy lifestyles, educational ambition, and moral integrity among teenagers, and served as a public role model inspiring meaningful and purposeful living.',
-      '2nd Place, KSN-K Informatics — ranked second in the district-level National Science Olympiad (Kompetisi Sains Nasional Kabupaten) in the field of informatics.',
-      'Pramuka Garuda Penegak, Kabupaten Kampar — attained Garuda Penegak, the highest scouting distinction at the Penegak (senior scout) level, awarded at the district level.',
-      'Duta Bahasa Riau Finalist (youngest finalist) — competed in the provincial Language Ambassador program representing Riau; the youngest participant to reach the finalist stage, with a focus on advancing Indonesian language proficiency and fostering a culture of linguistic excellence.'
+      'Chairman, OSIS SMAN 1 Kampar Timur — led student government programs, school events, and cross-division coordination.',
+      'Chairman, Pramuka SMAN 1 Kampar Timur — directed scouting operations, character-building activities, and inter-unit competitions.',
+      'Chairman, Forum GenRe Kabupaten Kampar (Gen. 4) — led district-level youth forum on adolescent health, academic achievement, and moral development.',
+      'Duta GenRe Putra 1 Kabupaten Kampar (1st Place) — top youth ambassador championing healthy lifestyles and educational ambition across Kampar district.',
+      '2nd Place, KSN-K Informatics — district-level National Science Olympiad in informatics.',
+      'Pramuka Garuda Penegak, Kabupaten Kampar — highest scouting distinction at the Penegak level, awarded at district level.',
+      'Duta Bahasa Riau Finalist (youngest) — youngest participant to reach the finalist stage of the provincial Language Ambassador program.'
     ]
   }
 ]
@@ -149,6 +149,58 @@ export const skills = {
   other: ['REST API Design', 'Project Management', 'Supply Chain Management'],
   soft: ['Leadership', 'Communication', 'Time Management', 'Cross-functional Coordination']
 }
+
+export const organizations = [
+  {
+    title: 'Ketua Dewan Racana (Chairman)',
+    company: 'Pramuka Universitas Indonesia',
+    location: 'Universitas Indonesia',
+    period: 'Dec 2023 – Dec 2025',
+    points: [
+      'Designed educational and training programs for members, including pola pembinaan drills, bela negara, and character-development activities.',
+      'Represented Pramuka UI as delegate to strengthen inter-university scout networks with Universitas Airlangga, ITB, UGM, and Universitas Tadulako.'
+    ]
+  },
+  {
+    title: 'Chairman',
+    company: 'Forum GenRe Kabupaten Kampar',
+    location: 'SMAN 1 Kampar Timur',
+    period: 'Oct 2022 – May 2023',
+    points: [
+      'Won 1st place in a provincial-level video competition on stunting prevention.',
+      'Led school outreach programs across Kampar district to raise youth awareness on adolescent health issues.'
+    ]
+  },
+  {
+    title: 'Pradana (Chairman)',
+    company: 'Pramuka SMAN 1 Kampar Timur',
+    location: 'SMAN 1 Kampar Timur',
+    period: 'Jul 2020 – Feb 2023',
+    points: [
+      'Represented Kampar contingent at JOTA-JOTI Riau Region (2022); sent one member to Kemah Bela Negara national camp.',
+      'Won 1st place nationally in BKKBN Tik Tok Challenge (stunting theme); guided two members to attain Garuda Penegak, the highest scouting distinction.'
+    ]
+  },
+  {
+    title: 'Ketua Umum (Chairman)',
+    company: 'OSIS SMAN 1 Kampar Timur',
+    location: 'SMAN 1 Kampar Timur',
+    period: 'Jun 2021 – Oct 2022',
+    points: [
+      'Progressed from Deputy Chairperson 1 (2020–2021) to General Chairperson (2021–2022).',
+      'Overhauled the organizational structure, boosted student participation, and fully executed all planned work programs.'
+    ]
+  },
+  {
+    title: 'Staff of Public Relations',
+    company: 'PIK-R SMART',
+    location: 'SMAN 1 Kampar Timur',
+    period: 'Sep 2021 – Aug 2022',
+    points: [
+      'Managed communication and information dissemination for the organization to the wider student community.'
+    ]
+  }
+]
 
 export const leadership = [
   {
