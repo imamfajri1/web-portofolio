@@ -1,0 +1,284 @@
+%-------------------------
+% Resume in Latex
+% Author : Imam Fajri
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+
+\begin{center}
+    \textbf{\Huge \scshape Imam Fajri} \\ \vspace{1pt}
+    \small South Jakarta, Indonesia $|$ \href{mailto:imamfajri.ze@gmail.com}{\underline{imamfajri.ze@gmail.com}} $|$
+    \href{https://www.linkedin.com/in/imamfajri/}{\underline{linkedin.com/in/imamfajri}} $|$
+    \href{https://imamfajri.my.id}{\underline{imamfajri.my.id}}
+\end{center}
+
+
+%-----------SUMMARY-----------
+\section{Summary}
+Information Systems undergraduate at Universitas Indonesia with hands-on experience as a full stack and backend engineer across Python (Django), Golang, and modern JavaScript frameworks (Next.js, Nuxt.js). Comfortable with PostgreSQL, Supabase, and Docker-based deployments, and experienced leading cross-functional teams as a project manager and operations lead. Actively seeking an internship in full stack, backend, DevOps, or project management roles to contribute to impactful engineering teams.
+
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Universitas Indonesia}{Depok, West Java}
+      {Bachelor of Information Systems, Faculty of Computer Science --- GPA: 3.29/4.00}{Aug. 2023 -- Present}
+      \resumeItemListStart
+        \resumeItem{Recipient of Bayan Peduli Scholarship (Batch 1) covering 8 semesters of tuition.}
+        \resumeItem{Twice-recipient of P2MW (Student Entrepreneurship Development Program) funding; KMI Expo finalist 2024 \& 2025.}
+        \resumeItem{Finalist, Hackathon UI 2025 (Funding Entrepreneurship track) and Satria Data 2024 (Infographic).}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Full Stack Engineer}{Aug. 2026 -- Present}
+      {Badan Registrasi Wilayah Adat (Internship, Remote)}{Indonesia}
+      \resumeItemListStart
+        \resumeItem{Developing Rimbahari version 2, leading advanced feature development and platform improvements.}
+        \resumeItem{Working across the full stack, from backend services and data models to the user-facing interface.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Project Manager}{Jun. 2026 -- Present}
+      {Veritas Technologia, Universitas Indonesia (Internship, Hybrid)}{Depok, West Java, Indonesia}
+      \resumeItemListStart
+        \resumeItem{Leading the development of a journal management system, coordinating scope, milestones, and delivery.}
+        \resumeItem{Bridging engineering and stakeholder requirements to keep the product aligned with editorial workflows.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Website Administrator and Research Assistant}{Dec. 2025 -- Present}
+      {Innovation and Comparative Governance, Faculty of Administration Science}{West Java, Indonesia}
+      \resumeItemListStart
+        \resumeItem{Built and deployed a research website on WordPress, designing all pages to match research-team content requirements.}
+        \resumeItem{Coordinated with DPER (Research Funding and Ecosystem Department) Universitas Indonesia to align website substance and information architecture.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Business Development}{Dec. 2025 -- Apr. 2026}
+      {Blackmount Consultant ( Intern, Remote)}{United Kingdom}
+      \resumeItemListStart
+        \resumeItem{Identified and evaluated potential consulting projects through targeted market and client research.}
+        \resumeItem{Supported client engagement, proposal development, and deal-closing processes for international consulting work.}
+        \resumeItem{Created persuasive pitch decks and presentations to communicate strategic value to prospective clients.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Researcher}{Aug. 2025 -- Dec. 2025}
+      {Ministry of Transmigration}{Central Sulawesi, Indonesia}
+      \resumeItemListStart
+        \resumeItem{Analyzed business processes and supply chain management for local commodities across transmigration areas.}
+        \resumeItem{Built supply and value chain flowcharts mapping production, distribution, and stakeholder roles.}
+        \resumeItem{Drafted policy briefs and a digitalization roadmap; co-authored an academic journal article on collaborative rural economies and Indonesian village-owned enterprises.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Full Stack Developer}{Jun. 2025 -- Dec. 2025}
+      {Bumindo Energi Sejahtera}{South Jakarta, Indonesia}
+      \resumeItemListStart
+        \resumeItem{Redesigned the company's sales recording and warehousing system, replacing manual workflows with a centralized web platform.}
+        \resumeItem{Designed the underlying relational database schema in PostgreSQL to align with the company's sales and inventory flow.}
+        \resumeItem{Rebuilt the company website on a modern JavaScript framework (Next.js) for improved performance and maintainability.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Web Developer}{May 2025 -- Aug. 2025}
+      {UI Student Dormitory, Universitas Indonesia}{South Jakarta, Indonesia}
+      \resumeItemListStart
+        \resumeItem{Redesigned the UI Student Dormitory website interface and rebuilt the system on a modern web framework.}
+        \resumeItem{Coordinated with DSTI (Directorate of Information Systems and Technology) on the campus IT infrastructure used for deployment.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Assistant Lecturer}{Jan. 2025 -- Jun. 2025}
+      {Faculty of Computer Science, Universitas Indonesia}{Depok, West Java}
+      \resumeItemListStart
+        \resumeItem{Assisted the lecturer in preparing teaching materials and structuring weekly learning schemes.}
+        \resumeItem{Graded student assignments and class participation; mentored students struggling with course material.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------PUBLICATIONS-----------
+\section{Publications}
+  \resumeSubHeadingListStart
+    \resumeItemListStart
+      \resumeItem{Co-Creating Governance for Community-Based Forest Orchid Cultivation and Ecotourism: Lessons from Lore Lindu National Park, Indonesia. \emph{Forests}, MDPI. \href{https://doi.org/10.3390/f17070837}{\underline{doi.org/10.3390/f17070837}}}
+    \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{Rimbahari} $|$ \emph{Python, Django, PostgreSQL, Docker} --- Backend Engineer \& DevOps}{}
+          \resumeItemListStart
+            \resumeItem{Built the backend of a knowledge-hub platform for Indonesian indigenous (adat) communities, exposing REST APIs in Django for content, contributors, and community resources.}
+            \resumeItem{Designed and managed the PostgreSQL data model covering communities, articles, and user roles, with migrations handled via Django ORM.}
+            \resumeItem{Containerized the application with Docker and Docker Compose to standardize local development and deployment environments.}
+            \resumeItem{Owned DevOps responsibilities including environment configuration, image builds, and deployment pipelines for staging and production.}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {\textbf{Wanara} $|$ \emph{Golang, PostgreSQL, Docker} --- Backend Engineer}{}
+          \resumeItemListStart
+            \resumeItem{Developed backend services in Go for a mobile application connecting urban users with forest conservation efforts through a personal, transparent, and measurable tree-adoption experience.}
+            \resumeItem{Implemented REST APIs for user authentication, tree-adoption transactions, and progress tracking, backed by PostgreSQL.}
+            \resumeItem{Containerized services with Docker for consistent build and deployment across environments.}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {\textbf{Rentee} $|$ \emph{Next.js, Supabase, PostgreSQL} --- Project Manager}{}
+          \resumeItemListStart
+            \resumeItem{Led the product team building Rentee, a multi-vendor rental platform piloted at Universitas Indonesia; serves as Chief Executive Officer and received P2MW Digital Business funding (2025).}
+            \resumeItem{Defined product scope, milestones, and sprint plans; coordinated engineering, design, and business development members from problem discovery through MVP launch.}
+            \resumeItem{Selected as a finalist at KMI Expo 2025 (Tidar University, Magelang) organized by Belmawa, Kemendikbudristek.}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+
+%-----------LEADERSHIP-----------
+\section{Leadership \& Activities}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Chairman}{Jan. 2024 -- Dec. 2025}
+      {Pramuka Universitas Indonesia (UI Scout Organization)}{Depok, West Java}
+      \resumeItemListStart
+        \resumeItem{Led a team of 20+ members across multiple divisions and coordinated with the Directorate of Student Affairs on scouting programs.}
+        \resumeItem{Strengthened collaboration with university scout organizations across Indonesia and partner countries including Japan and the United Kingdom.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Staff, AI Innovation Challenge}{Mar. 2024 -- Oct. 2024}
+      {CompFest, Faculty of Computer Science Universitas Indonesia}{Depok, West Java}
+      \resumeItemListStart
+        \resumeItem{Supported judges in validating the functionality of participants' AI projects and prepared assessment sheets.}
+        \resumeItem{Consolidated scoring data from each judge into structured spreadsheets for final ranking.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: Python, Go (Golang), Java, JavaScript/TypeScript, SQL} \\
+     \textbf{Frameworks \& Libraries}{: Django, Next.js, Nuxt.js, Node.js} \\
+     \textbf{Databases}{: PostgreSQL, Supabase, MySQL} \\
+     \textbf{DevOps \& Tools}{: Docker, Docker Compose, Git, GitHub, Linux} \\
+     \textbf{Other}{: REST API design, Project Management, Supply Chain Management, Microsoft Office (Word, Excel, Spreadsheet)} \\
+     \textbf{Soft Skills}{: Leadership, Communication, Time Management, Cross-functional Coordination}
+    }}
+ \end{itemize}
+
+
+%-------------------------------------------
+\end{document}
